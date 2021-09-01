@@ -1,0 +1,13 @@
+header {
+    background-color: #C3CFD9;
+    height: 67px;
+}
+
+header h1 {
+    font-size: 34px;
+    color: #E8833A;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
