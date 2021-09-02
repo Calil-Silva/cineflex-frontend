@@ -4,15 +4,15 @@ import axios from "axios";
 import './schedule.css'
 import Aranha from '../movies/images/aranha.jpeg'
 
-export default function Schedule() {
+export default function Schedule({movieInfo}) {
     const [schedule, setSchedule] = useState([]);
     const { idFilme } = useParams();
+    console.log(movieInfo)
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies/${idFilme}/showtimes`)
         promise.then(response => {
             setSchedule([...response.data.days])
-            console.log(response.data)
         })
     }, [])
 
@@ -30,9 +30,9 @@ export default function Schedule() {
 
             <div className="movie-option">
                 <div className="movie-img">
-                    <img src={Aranha} />
+                    <img src={movieInfo[1]} />
                 </div>
-                <span>Aranhas</span>
+                <span>{movieInfo[0]}</span>
             </div>
         </section>
     )
