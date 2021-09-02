@@ -15,11 +15,19 @@ export default function Sitting() {
         })
     }, [])
 
-console.log(seats)
+    console.log(seats)
 
     return (
         <section>
             <h1>Selecione o(s) assento(s)</h1>
+
+            <div className="seats">
+                <div className="seat"></div>
+                <div className="seat"></div>
+                <div className="seat"></div>
+
+
+            </div>
         </section>
     )
 }
