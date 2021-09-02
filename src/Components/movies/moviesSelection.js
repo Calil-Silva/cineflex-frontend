@@ -1,28 +1,32 @@
 import './moviesSelection.css'
 import axios from 'axios'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Aranha from './images/aranha.jpeg'
+import { Link } from "react-router-dom"
 
 export default function MoviesSelection() {
-const [status, setStatus] = useState("")
 
-const promisse = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies')
-promisse.then(moviesArray)
+    const [movies, setMovies] = useState([])
 
-function moviesArray(promisse) {
-    // setStatus(promisse.data)
-    // console.log(status)
-}
+    useEffect(() => {
+        const promise = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies')
 
-    // teste.map((movies) => <img src={movies.postURL} />)
+        promise.then(moviesPoster => {
+            setMovies(moviesPoster.data)
+        })
+    }, [])
+
     return (
         <section>
             <h1>Selecione o filme</h1>
             <div className={"movies"}>
-                <div className={"movie"}><img src={Aranha} /></div>
-                <div className={"movie"}><img src={Aranha} /></div>
-                <div className={"movie"}><img src={Aranha} /></div>
-                <div className={"movie"}><img src={Aranha} /></div>
+                {movies.map((element) =>
+    <Link to="/filme">
+        <div className={"movie"}>
+            <img src={element.posterURL} alt="" />
+        </div>
+    </Link>
+)}
             </div>
         </section>
     )
