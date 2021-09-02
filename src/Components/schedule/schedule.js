@@ -1,13 +1,11 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './schedule.css'
-import Aranha from '../movies/images/aranha.jpeg'
 
 export default function Schedule({movieInfo}) {
     const [schedule, setSchedule] = useState([]);
     const { idFilme } = useParams();
-    console.log(movieInfo)
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies/${idFilme}/showtimes`)
@@ -23,7 +21,7 @@ export default function Schedule({movieInfo}) {
             <div className="schedule" key={index}>
                 <span>{`${element.weekday} - ${element.date}`}</span>
                 <div className="schedule-options">
-                    {element.showtimes.map(({name, id}) => <button key={id}>{name}</button>)}
+                    {element.showtimes.map(({name, id}) => <Link to={`/sessoes/${idFilme}/assentos/${id}`}><button key={id}>{name}</button></Link>)}
                 </div>
             </div>
             ))}

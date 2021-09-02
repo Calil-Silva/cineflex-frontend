@@ -2,6 +2,7 @@ import Movies from './movies/moviesSelection';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Schedule from './schedule/schedule';
 import React, { useState } from 'react';
+import Sitting from './sitting/sitting';
 
 export default function App() {
   const [movieInfo, setMovieInfo] = useState([]);
@@ -24,6 +25,9 @@ export default function App() {
       </Route>
       <Route path="/sessoes/:idFilme" exact>
       <Schedule movieInfo={movieInfo}/>
+      </Route>
+      <Route path="/sessoes/:idFilme/assentos/:idSessao" exact>
+      <Sitting />
       </Route>
     </Switch>
     
