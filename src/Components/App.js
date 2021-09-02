@@ -3,8 +3,8 @@ import Movies from './movies/moviesSelection';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Schedule from './schedule/schedule';
 
-
 export default function App() {
+
   return (
     <Router>
     <Link to="/">
@@ -17,7 +17,7 @@ export default function App() {
       <Route path="/" exact>
       <Movies /> 
       </Route>
-      <Route path="/filme" exact>
+      <Route path="/sessoes/:idFilme" exact>
       <Schedule />
       </Route>
     

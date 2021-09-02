@@ -21,12 +21,11 @@ export default function MoviesSelection() {
             <h1>Selecione o filme</h1>
             <div className={"movies"}>
                 {movies.map((element) =>
-    <Link to="/filme">
-        <div className={"movie"}>
-            <img src={element.posterURL} alt="" />
-        </div>
-    </Link>
-)}
+                    <Link to={`/sessoes/${element.id}`}>
+                        <div className={"movie"}>
+                            <img src={element.posterURL} alt="" />
+                        </div>
+                    </Link>)}
             </div>
         </section>
     )
