@@ -1,4 +1,3 @@
-import './App.css';
 import Movies from './movies/moviesSelection';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Schedule from './schedule/schedule';

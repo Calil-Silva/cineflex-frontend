@@ -1,7 +1,6 @@
 import './moviesSelection.css'
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
-import Aranha from './images/aranha.jpeg'
 import { Link } from "react-router-dom"
 
 export default function MoviesSelection() {
