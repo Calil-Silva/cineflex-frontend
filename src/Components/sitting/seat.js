@@ -14,11 +14,11 @@ export default function Seat( { isAvailable, num } ) {
 
     return (
         <div style={{ backgroundColor: selected }} className={`seat ${selection}`} onClick={() => {
-            if(selected === '') {
+            if(selected === '' && isAvailable) {
                 setSelected("#8DD7CF")
+            } else if(!isAvailable) {
+                alert("Esse assento não está disponível")
             } else {
                 setSelected("")
             }
-            }}>{num}</div>
-    )
-}
+            }}>{num}</div>)}
