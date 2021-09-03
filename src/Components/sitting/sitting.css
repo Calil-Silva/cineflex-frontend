@@ -3,19 +3,50 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 18px 7px;
-    /* display: grid; */
-    /* grid-template-columns: repeat(10, 1fr);
-    grid-auto-rows: 26px;
-    grid-auto-columns: 26px;
-    grid-gap: 18px 7px; */
     padding: 0 24px;
 }
 
-.seats .seat {
+.seat {
     border-radius: 100%;
-    height: 26px;
-    width: 26px;
-    background-color: #C3CFD9;
-    /* border: 1px solid blue;
-    border-radius: 100%; */
+    height: 30px;
+    width: 30px;
+    border: 1px solid #1AAE9E;
+    font-size: 11px;
 }
+
+.seats .seat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seats-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+.seats-info span {
+    margin-top: 10px;
+}
+
+.selected {
+    background-color: #8DD7CF;
+}
+
+.available {
+    background-color: #C3CFD9;
+}
+
+.unavailable {
+    background-color: #FBE192;
+}
+
