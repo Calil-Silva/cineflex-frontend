@@ -2,15 +2,17 @@ import { Link, useParams } from "react-router-dom"
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './schedule.css'
+import MovieOption from "../HELPER/footer/movieOption";
 
 export default function Schedule({movieInfo}) {
     const [schedule, setSchedule] = useState([]);
     const { idFilme } = useParams();
 
     useEffect(() => {
-        const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies/${idFilme}/showtimes`)
+        const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/movies/${idFilme}/showtimes`)
         promise.then(response => {
             setSchedule([...response.data.days])
+            console.log(response.data)
         })
     }, [])
 
@@ -25,13 +27,7 @@ export default function Schedule({movieInfo}) {
                 </div>
             </div>
             ))}
-
-            <div className="movie-option">
-                <div className="movie-img">
-                    <img src={movieInfo[1]} />
-                </div>
-                <span>{movieInfo[0]}</span>
-            </div>
+            <MovieOption movieInfo={movieInfo}/>
         </section>
     )
 }

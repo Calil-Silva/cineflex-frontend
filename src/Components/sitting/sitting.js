@@ -5,8 +5,10 @@ import axios from 'axios';
 import Seat from './seat';
 import SeatInfos from './seatInfos';
 import PersonalData from './personalData';
+import MovieOption from '../HELPER/footer/movieOption';
 
-export default function Sitting() {
+export default function Sitting({ movieInfo }) {
+    console.log(movieInfo)
 
     const { idSessao } = useParams();
     const [seats, setSeats] = useState([]);
@@ -28,6 +30,7 @@ export default function Sitting() {
             </div>
             <SeatInfos />
             <PersonalData />
+            <MovieOption movieInfo={movieInfo}/>
         </section>
     )
 }
