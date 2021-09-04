@@ -1,0 +1,38 @@
+.success {
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+}
+
+.success h1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #247A6B;
+    width: 150px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.success .success-info {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.success ul {
+    font-size: 22px;
+    color: #293845;
+    margin: 10px 0 40px;
+}
+
+.success button {
+    width: 225px;
+    height: 42px;
+    color: #fff;
+    background-color: #E8833A;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 30px auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
