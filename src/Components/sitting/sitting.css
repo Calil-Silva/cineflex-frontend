@@ -1,17 +1,17 @@
 .seats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 18px 7px;
-    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr repeat(9, 1fr);
+    gap: 18px 0;
+    margin: 13.5px;
 }
 
 .seat {
     border-radius: 100%;
-    height: 30px;
-    width: 30px;
+    height: 26px;
+    width: 26px;
     border: 1px solid #1AAE9E;
     font-size: 11px;
+    margin: 0 auto;
 }
 
 .seats .seat {
@@ -51,8 +51,9 @@
 }
 
 .buyerData {
-    margin: 40px 0 30px 0;
-    padding: 0 24px;
+    margin: 40px 13.5px 30px 13.5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .buyerData label {
@@ -61,7 +62,7 @@
 }
 
 .buyerData .data {
-    width: 100%;
+    width: calc(100% - 6.75px);
     margin-bottom: 7px;
     border: 1px solid #D4D4D4;
     height: 51px;

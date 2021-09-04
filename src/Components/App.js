@@ -7,6 +7,10 @@ import Success from './success/success';
 
 export default function App() {
   const [movieInfo, setMovieInfo] = useState([]);
+  const [selectedSeats, setSelectedSeats] = useState([]);
+  const [name, setName] = useState("");
+  const [cpf, setCpf] = useState("");
+  console.log(selectedSeats)
 
   function movieDescription (description) {
     setMovieInfo(description)
@@ -28,10 +32,10 @@ export default function App() {
       <Schedule movieInfo={movieInfo}/>
       </Route>
       <Route path="/sessoes/:idFilme/assentos/:idSessao" exact>
-      <Sitting movieInfo={movieInfo}/>
+      <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf}/>
       </Route>
       <Route path="/sessoes/:idFilme/assentos/:idSessao/sucesso" exact>
-      <Success />
+      <Success selectedSeats={selectedSeats} name={name} cpf={cpf}/>
       </Route>
     </Switch>
     
