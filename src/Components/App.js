@@ -10,35 +10,37 @@ export default function App() {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [name, setName] = useState("");
   const [cpf, setCpf] = useState("");
-  console.log(selectedSeats)
+  const [date, setDate] = useState('')
+  const [schedule, setSchedule] = useState('')
+  console.log(date, schedule)
 
-  function movieDescription (description) {
+  function movieDescription(description) {
     setMovieInfo(description)
   };
 
   return (
     <Router>
-    <Link to="/">
-    <header>
-      <h1>CINEFLEX</h1>
-    </header>
-    </Link>
-    
-    <Switch>
-      <Route path="/" exact>
-      <Movies movieDescription={(description) => movieDescription(description)}/> 
-      </Route>
-      <Route path="/sessoes/:idFilme" exact>
-      <Schedule movieInfo={movieInfo}/>
-      </Route>
-      <Route path="/sessoes/:idFilme/assentos/:idSessao" exact>
-      <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf}/>
-      </Route>
-      <Route path="/sessoes/:idFilme/assentos/:idSessao/sucesso" exact>
-      <Success selectedSeats={selectedSeats} name={name} cpf={cpf}/>
-      </Route>
-    </Switch>
-    
+      <Link to="/">
+        <header>
+          <h1>CINEFLEX</h1>
+        </header>
+      </Link>
+
+      <Switch>
+        <Route path="/" exact>
+          <Movies movieDescription={(description) => movieDescription(description)} />
+        </Route>
+        <Route path="/sessoes/:idFilme" exact>
+          <Schedule movieInfo={movieInfo} date={setDate} hour={setSchedule} />
+        </Route>
+        <Route path="/sessoes/:idFilme/assentos/:idSessao" exact>
+          <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf} date={date} schedule={schedule}/>
+        </Route>
+        <Route path="/sessoes/:idFilme/assentos/:idSessao/sucesso" exact>
+          <Success selectedSeats={selectedSeats} name={name} cpf={cpf} />
+        </Route>
+      </Switch>
+
     </Router>
   );
 }

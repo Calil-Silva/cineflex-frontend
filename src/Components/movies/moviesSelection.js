@@ -14,8 +14,6 @@ export default function MoviesSelection({movieDescription}) {
         })
     }, [])
 
-    console.log(movies)
-
     return (
         <section>
             <h1>Selecione o filme</h1>
