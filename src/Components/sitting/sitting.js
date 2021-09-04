@@ -7,7 +7,7 @@ import SeatInfos from './seatInfos';
 import PersonalData from './personalData';
 import MovieOption from '../HELPER/footer/movieOption';
 
-export default function Sitting({ movieInfo, setSelectedSeats, setName, name, setCpf, cpf, date, schedule }) {
+export default function Sitting({ movieInfo, setSelectedSeats, setName, name, setCpf, cpf, date, schedule, selectedSeatsNum}) {
 
     const { idSessao } = useParams();
     const [seats, setSeats] = useState([]);
@@ -25,7 +25,7 @@ export default function Sitting({ movieInfo, setSelectedSeats, setName, name, se
             <div className="seats">
                 {seats.map((element) => {
                     return (
-                        <Seat id={element.id} isAvailable={element.isAvailable} num={element.name} setSelectedSeats={(id) => setSelectedSeats(id)}/>)})}
+                        <Seat id={element.id} isAvailable={element.isAvailable} num={element.name} setSelectedSeats={(id) => setSelectedSeats(id)} selectedSeatsNum={(num) => selectedSeatsNum(num)}/>)})}
             </div>
             <SeatInfos />
             <PersonalData setName={setName} setCpf={setCpf} name={name} cpf={cpf}/>

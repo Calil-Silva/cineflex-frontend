@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './success.css'
 
-export default function Success({ selectedSeats, name, cpf }) {
+export default function Success({ selectedSeats, name, cpf, date, schedule, movieInfo, selectedSeatsNum, setSchedule, setDate, setCpf, setName,setSelectedSeatsNum, setSelectedSeats, setMovieInfo }) {
     const [success, setSuccess] = useState([])
 
     useEffect(() => {
@@ -17,6 +18,16 @@ export default function Success({ selectedSeats, name, cpf }) {
         })
     }, [])
 
+    function homePage() {
+        setSchedule('');
+        setDate('');
+        setCpf('');
+        setName('');
+        setSelectedSeatsNum([]);
+        setSelectedSeats([]);
+        setMovieInfo([]);
+    }
+
 
     return (
         <section className="success">
@@ -25,28 +36,28 @@ export default function Success({ selectedSeats, name, cpf }) {
             <div>
                 <span className="success-info">Filme e sessão</span>
                 <ul>
-                    <li>Enola Holmes</li>
-                    <li>24/06/2021 15:00</li>
+                    
+                    <li>{movieInfo.title}</li>
+                    <li>{date} {schedule}</li>
                 </ul>
             </div>
 
             <div>
                 <span className="success-info">Ingressos</span>
                 <ul>
-                    <li>Assento 15</li>
-                    <li>Assento 16</li>
+                {selectedSeatsNum.map(element => <li>Assento {element}</li>)}
                 </ul>
             </div>
 
             <div>
                 <span className="success-info">Comprador</span>
                 <ul>
-                    <li>Nome: João da Silva Sauro</li>
-                    <li>CPF: 123.456.789-10</li>
+                    <li>{name}</li>
+                    <li>{cpf}</li>
                 </ul>
             </div>
 
-            <button>Voltar para Home</button>
+            <Link to="/"><button onClick={homePage}>Voltar para Home</button></Link>
 
         </section>
     )

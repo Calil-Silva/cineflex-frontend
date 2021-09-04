@@ -7,8 +7,8 @@ export default function PersonalData( { setName, setCpf, name, cpf } ) {
     const { idFilme, idSessao } = useParams();
 
     function clearNameCPF() {
-        setCpf("");
-        setName("");
+        // setCpf("");
+        // setName("");
     }
 
     return (
