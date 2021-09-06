@@ -39,10 +39,10 @@ export default function App() {
           <Schedule movieInfo={movieInfo} date={setDate} hour={setSchedule} />
         </Route>
         <Route path="/sessoes/:idFilme/assentos/:idSessao" exact>
-          <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf} date={date} schedule={schedule} setSelectedSeatsNum={setSelectedSeatsNum} />
+          <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf} date={date} schedule={schedule} setSelectedSeatsNum={setSelectedSeatsNum} selectedSeatsNum={selectedSeatsNum}/>
         </Route>
         <Route path="/sessoes/:idFilme/assentos/:idSessao/sucesso" exact>
-          <Success selectedSeats={selectedSeats} name={name} cpf={cpf} date={date} schedule={schedule} movieInfo={movieInfo} selectedSeatsNum={selectedSeatsNum} setSchedule={setSchedule} setDate={setDate} setCpf={setCpf} setName={setName} setSelectedSeatsNum={setSelectedSeatsNum} setSelectedSeats={setSelectedSeats} setMovieInfo={setMovieInfo} setReload={setReload}/>
+          <Success selectedSeats={selectedSeats} name={name} cpf={cpf} date={date} schedule={schedule} movieInfo={movieInfo} selectedSeatsNum={selectedSeatsNum} setReload={setReload}/>
         </Route>
       </Switch>
 
