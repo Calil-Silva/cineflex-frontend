@@ -1,7 +1,7 @@
 import Movies from './movies/moviesSelection';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import Schedule from './schedule/schedule';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sitting from './sitting/sitting';
 import Success from './success/success';
 
@@ -13,12 +13,16 @@ export default function App() {
   const [cpf, setCpf] = useState("");
   const [date, setDate] = useState('')
   const [schedule, setSchedule] = useState('')
-
-  console.log(selectedSeatsNum)
+  const [reload, setReload] = useState(false)
 
   function movieDescription(description) {
     setMovieInfo(description)
   };
+
+  if(reload) {
+    window.location.reload();
+    setReload(false)
+  }
 
   return (
     <Router>
@@ -35,10 +39,10 @@ export default function App() {
           <Schedule movieInfo={movieInfo} date={setDate} hour={setSchedule} />
         </Route>
         <Route path="/sessoes/:idFilme/assentos/:idSessao" exact>
-          <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf} date={date} schedule={schedule} setSelectedSeatsNum={setSelectedSeatsNum}/>
+          <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf} date={date} schedule={schedule} setSelectedSeatsNum={setSelectedSeatsNum} />
         </Route>
         <Route path="/sessoes/:idFilme/assentos/:idSessao/sucesso" exact>
-          <Success selectedSeats={selectedSeats} name={name} cpf={cpf} date={date} schedule={schedule} movieInfo={movieInfo} selectedSeatsNum={selectedSeatsNum} setSchedule={setSchedule} setDate={setDate} setCpf={setCpf} setName={setName} setSelectedSeatsNum={setSelectedSeatsNum} setSelectedSeats={setSelectedSeats} setMovieInfo={setMovieInfo} />
+          <Success selectedSeats={selectedSeats} name={name} cpf={cpf} date={date} schedule={schedule} movieInfo={movieInfo} selectedSeatsNum={selectedSeatsNum} setSchedule={setSchedule} setDate={setDate} setCpf={setCpf} setName={setName} setSelectedSeatsNum={setSelectedSeatsNum} setSelectedSeats={setSelectedSeats} setMovieInfo={setMovieInfo} setReload={setReload}/>
         </Route>
       </Switch>
 

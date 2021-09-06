@@ -1,0 +1,131 @@
+[33mcommit c9b39864e987212948f39a84aa8e7db7fb9f42e7[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sun Sep 5 23:16:06 2021 -0300
+
+    referencia
+
+[33mcommit 1e4a76056a46e8bce6752c2d76f721fcc6ecb91e[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sun Sep 5 22:59:32 2021 -0300
+
+    correcao do range do botao de reservar assento
+
+[33mcommit d9639a7b20b3e7c4b700b7373f7cd4cf699fead1[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sun Sep 5 22:40:54 2021 -0300
+
+    botao de voltar implementado
+
+[33mcommit 653c4e48fab4972dc22dfc0f5c293a4e1a195b25[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sun Sep 5 21:46:59 2021 -0300
+
+    botao de voltar adicionado
+
+[33mcommit 95f323a7ee58c7a76e7a91fc58fe236cc94da743[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sat Sep 4 18:35:23 2021 -0300
+
+    requisitos finalizados
+
+[33mcommit 778506c4eb4c4b5dbb95f90d096d1819db9dec82[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sat Sep 4 17:41:48 2021 -0300
+
+    layout da tela de sucesso implementado
+
+[33mcommit c173432721a6c5da83119d9a2399e8cf305154be[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sat Sep 4 15:45:01 2021 -0300
+
+    rodape finalizado
+
+[33mcommit 7d6433b5667e37192cb97e4767056f22762bb771[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Sat Sep 4 00:40:55 2021 -0300
+
+    reservar assentos concluido
+
+[33mcommit 1ff87d899e7a6fc400f02807a2ee3a8728088377[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Fri Sep 3 12:53:26 2021 -0300
+
+    rota de sucesso criada
+
+[33mcommit 7dcb9454871b286ba1d6c9f2699be354e3fffc09[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Fri Sep 3 03:04:42 2021 -0300
+
+    layout dos assentos finalizado
+
+[33mcommit 87cd6e937259978cbea170a64ed7eee40978db59[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Fri Sep 3 02:02:49 2021 -0300
+
+    alerta de assento nao disponivel implementado
+
+[33mcommit 383d5a67b550bd5a3ef144484937bcfe6e19cb2c[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Fri Sep 3 00:09:14 2021 -0300
+
+    assento selecionado e disponivel implementado
+
+[33mcommit f286144cb4be77c9ab1d341cf6f67424de0daeed[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Thu Sep 2 22:18:47 2021 -0300
+
+    assentos adicionados conforme API
+
+[33mcommit 39914e837a63983b8a6bf6dea8da1b482ba3a97d[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Thu Sep 2 14:55:01 2021 -0300
+
+    selecao de assentos parcialmente implementada
+
+[33mcommit 17ab66f262fe6e4cb1c0bd50e6c3f9bf5d0f6506[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Thu Sep 2 11:27:16 2021 -0300
+
+    requisicao dos assentos concluida
+
+[33mcommit 5bc777070b3fea0448370942c8520fc2774a389c[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Thu Sep 2 11:04:09 2021 -0300
+
+    rota /assentos/:idSessao implementada
+
+[33mcommit 48320dcc29495852fc8dd9a944da3929c116f8ef[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Thu Sep 2 10:45:41 2021 -0300
+
+    escolha de sessao implementada
+
+[33mcommit 18c5bc9c37f249ea0a6774c4b6bd7fcb8578789a[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Thu Sep 2 09:04:05 2021 -0300
+
+    Layout dos horarios implementado
+
+[33mcommit aca2c4d9ca4225f4ac30ea7825afc9dd2191daad[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Wed Sep 1 22:39:12 2021 -0300
+
+    redicionamento para /sessoes/:idFilme concluido
+
+[33mcommit aeb31f400b208169df7796321885a427aff611e4[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Wed Sep 1 22:06:50 2021 -0300
+
+    filmes adicionados a pagina inicial
+
+[33mcommit a14c3993987a9d130f75c5f70c8ebe5af0486a91[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Wed Sep 1 14:48:27 2021 -0300
+
+    Layout do 'Escolha seu filme' criado
+
+[33mcommit 6ae756494407cd139b63d0ad468bc77101dd76b3[m
+Author: Calil-Silva <ka.renner@hotmail.com>
+Date:   Wed Sep 1 10:26:37 2021 -0300
+
+    Initialize project using Create React App

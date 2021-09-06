@@ -4,7 +4,7 @@ import axios from 'axios';
 import './success.css'
 import { ChevronBackCircleOutline } from 'react-ionicons'
 
-export default function Success({ selectedSeats, name, cpf, date, schedule, movieInfo, selectedSeatsNum, setSchedule, setDate, setCpf, setName,setSelectedSeatsNum, setSelectedSeats, setMovieInfo }) {
+export default function Success({ selectedSeats, name, cpf, date, schedule, movieInfo, selectedSeatsNum, setReload}) {
     const [success, setSuccess] = useState([])
     const { idSessao, idFilme } = useParams();
     let history = useHistory();
@@ -19,16 +19,6 @@ export default function Success({ selectedSeats, name, cpf, date, schedule, movi
             setSuccess([...response.data])
         })
     }, [])
-
-    function homePage() {
-        setSchedule('');
-        setDate('');
-        setCpf('');
-        setName('');
-        setSelectedSeatsNum([]);
-        setSelectedSeats([]);
-        setMovieInfo([]);
-    }
 
     function backToLastPage() {
         history.push(`/sessoes/${idFilme}/assentos/${idSessao}`);
@@ -70,7 +60,7 @@ export default function Success({ selectedSeats, name, cpf, date, schedule, movi
                 </ul>
             </div>
 
-            <Link to="/"><button onClick={homePage}>Voltar para Home</button></Link>
+            <Link to="/"><button onClick={() => setReload(true)}>Voltar para Home</button></Link>
 
         </section>
     )
