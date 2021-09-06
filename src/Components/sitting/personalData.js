@@ -17,7 +17,9 @@ export default function PersonalData( { setName, setCpf, name, cpf } ) {
                 <input className="data" type="text" id="name" name="name" placeholder="Digite seu nome..." value={name} onChange={(event) => setName(event.target.value)}  />
                 <label for="cpf">CPF do comprador:</label>
                 <input className="data" type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" value={cpf} onChange={(event) => setCpf(event.target.value)} />
+                <div className="submitButton">
                 <Link to={`/sessoes/${idFilme}/assentos/${idSessao}/sucesso`}><input className="submit" type="submit" value="Reservar assento(s)" onClick={clearNameCPF}/></Link>
+                </div>
         </form>
     )
 }
