@@ -4,7 +4,6 @@ import Schedule from './schedule/schedule';
 import React, { useState } from 'react';
 import Sitting from './sitting/sitting';
 import Success from './success/success';
-import { ChevronBackCircleOutline } from 'react-ionicons'
 
 export default function App() {
   const [movieInfo, setMovieInfo] = useState([]);
@@ -23,17 +22,7 @@ export default function App() {
     <Router>
 
       <header>
-        <div>
-        <ChevronBackCircleOutline
-            color="black"
-            height="40px"
-            width="40px"
-            onClick={() => alert('Hi!')}
-          />
-        </div>
-      
-        <h1>
-          CINEFLEX</h1>
+        <h1>CINEFLEX</h1>
       </header>
 
       <Switch>

@@ -1,18 +1,23 @@
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useHistory } from "react-router-dom"
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './schedule.css'
 import MovieOption from "../HELPER/footer/movieOption";
+import { ChevronBackCircleOutline } from 'react-ionicons'
 
 export default function Schedule({ movieInfo, date, hour }) {
     const [schedule, setSchedule] = useState([]);
     const { idFilme } = useParams();
+    let history = useHistory();
 
     function setSessionInfo(thisDate, schedule) {
         date(thisDate)
         hour(schedule)
     }
 
+    function backToLastPage() {
+        history.push("/");
+    }
 
 
     useEffect(() => {
@@ -24,7 +29,16 @@ export default function Schedule({ movieInfo, date, hour }) {
 
     return (
         <section>
+            <div className="backToLastPage">
+                    <ChevronBackCircleOutline
+                        color="black"
+                        height="40px"
+                        width="40px"
+                        onClick={() => backToLastPage()}
+                    />
+            </div>
             <h1>Selecione o horário</h1>
+
             {schedule.map((element, index) => (
                 <div className="schedule" key={index}>
                     <span>{`${element.weekday} - ${element.date}`}</span>
@@ -33,7 +47,7 @@ export default function Schedule({ movieInfo, date, hour }) {
                     </div>
                 </div>
             ))}
-            <MovieOption movieInfo={movieInfo}/>
+            <MovieOption movieInfo={movieInfo} />
         </section>
     )
 }

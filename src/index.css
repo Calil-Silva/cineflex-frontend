@@ -21,14 +21,16 @@ header h1 {
     margin: auto;
 }
 
-header div {
-    margin-left: 24px;
-    position: absolute;
-}
-
 section h1 {
     font-size: 24px;
     color: #293845;
     margin: 50px 0 50px;
     text-align: center;
+}
+
+.backToLastPage {
+    display: flex;
+    position: absolute;
+    left: 24px;
+    top: 13.5px;
 }
