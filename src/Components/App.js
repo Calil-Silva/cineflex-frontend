@@ -4,6 +4,7 @@ import Schedule from './schedule/schedule';
 import React, { useState } from 'react';
 import Sitting from './sitting/sitting';
 import Success from './success/success';
+import { ChevronBackCircleOutline } from 'react-ionicons'
 
 export default function App() {
   const [movieInfo, setMovieInfo] = useState([]);
@@ -20,11 +21,20 @@ export default function App() {
 
   return (
     <Router>
-      <Link to="/">
-        <header>
-          <h1>CINEFLEX</h1>
-        </header>
-      </Link>
+
+      <header>
+        <div>
+        <ChevronBackCircleOutline
+            color="black"
+            height="40px"
+            width="40px"
+            onClick={() => alert('Hi!')}
+          />
+        </div>
+      
+        <h1>
+          CINEFLEX</h1>
+      </header>
 
       <Switch>
         <Route path="/" exact>
@@ -34,10 +44,10 @@ export default function App() {
           <Schedule movieInfo={movieInfo} date={setDate} hour={setSchedule} />
         </Route>
         <Route path="/sessoes/:idFilme/assentos/:idSessao" exact>
-          <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf} date={date} schedule={schedule} selectedSeatsNum={setSelectedSeatsNum}/>
+          <Sitting movieInfo={movieInfo} setSelectedSeats={setSelectedSeats} setName={setName} name={name} setCpf={setCpf} cpf={cpf} date={date} schedule={schedule} selectedSeatsNum={setSelectedSeatsNum} />
         </Route>
         <Route path="/sessoes/:idFilme/assentos/:idSessao/sucesso" exact>
-          <Success selectedSeats={selectedSeats} name={name} cpf={cpf} date={date} schedule={schedule} movieInfo={movieInfo} selectedSeatsNum={selectedSeatsNum} setSchedule={setSchedule} setDate={setDate} setCpf={setCpf} setName={setName} setSelectedSeatsNum={setSelectedSeatsNum} setSelectedSeats={setSelectedSeats} setMovieInfo={setMovieInfo}/>
+          <Success selectedSeats={selectedSeats} name={name} cpf={cpf} date={date} schedule={schedule} movieInfo={movieInfo} selectedSeatsNum={selectedSeatsNum} setSchedule={setSchedule} setDate={setDate} setCpf={setCpf} setName={setName} setSelectedSeatsNum={setSelectedSeatsNum} setSelectedSeats={setSelectedSeats} setMovieInfo={setMovieInfo} />
         </Route>
       </Switch>
 
