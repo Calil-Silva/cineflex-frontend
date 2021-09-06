@@ -19,7 +19,7 @@ export default function MoviesSelection({movieDescription}) {
             <h1>Selecione o filme</h1>
             <div className={"movies"}>
                 {movies.map((element, index) =>
-                    <Link to={`/sessoes/${element.id}`}>
+                    <Link to={`/sessoes/${element.id}`} key={index}>
                         <div className={"movie"} key={index} onClick={() => movieDescription(element)}>
                             <img src={element.posterURL} alt="" />
                         </div>

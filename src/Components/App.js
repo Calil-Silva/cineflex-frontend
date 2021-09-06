@@ -1,7 +1,7 @@
 import Movies from './movies/moviesSelection';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Schedule from './schedule/schedule';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Sitting from './sitting/sitting';
 import Success from './success/success';
 
@@ -14,6 +14,8 @@ export default function App() {
   const [date, setDate] = useState('')
   const [schedule, setSchedule] = useState('')
   const [reload, setReload] = useState(false)
+
+  console.log(selectedSeatsNum)
 
   function movieDescription(description) {
     setMovieInfo(description)

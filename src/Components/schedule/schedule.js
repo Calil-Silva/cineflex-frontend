@@ -24,9 +24,11 @@ export default function Schedule({ movieInfo, date, hour }) {
         const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/movies/${idFilme}/showtimes`)
         promise.then(response => {
             setSchedule([...response.data.days])
+            console.log(schedule);
         })
     }, [])
 
+    console.log(schedule);
     return (
         <section>
             <div className="backToLastPage">
@@ -43,7 +45,7 @@ export default function Schedule({ movieInfo, date, hour }) {
                 <div className="schedule" key={index}>
                     <span>{`${element.weekday} - ${element.date}`}</span>
                     <div className="schedule-options">
-                        {element.showtimes.map(({ name, id }) => <Link to={`/sessoes/${idFilme}/assentos/${id}`}><button key={id} onClick={() => setSessionInfo(element.date, name)}>{name}</button></Link>)}
+                        {element.showtimes.map(({ name, id }) => <Link to={`/sessoes/${idFilme}/assentos/${id}`} key={id}><button key={id} onClick={() => setSessionInfo(element.date, name)}>{name}</button></Link>)}
                     </div>
                 </div>
             ))}

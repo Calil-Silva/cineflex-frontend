@@ -13,7 +13,6 @@ export default function Sitting({ movieInfo, setSelectedSeats, setName, name, se
     const { idSessao, idFilme } = useParams();
     const [seats, setSeats] = useState([]);
     let history = useHistory();
-    console.log(selectedSeatsNum)
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v3/cineflex/showtimes/${idSessao}/seats`)
@@ -28,6 +27,7 @@ export default function Sitting({ movieInfo, setSelectedSeats, setName, name, se
 
     return (
         <section>
+
             <div className="backToLastPage">
                 <ChevronBackCircleOutline
                     color="black"
@@ -36,20 +36,28 @@ export default function Sitting({ movieInfo, setSelectedSeats, setName, name, se
                     onClick={() => backToLastPage()}
                 />
             </div>
+
             <h1>Selecione o(s) assento(s)</h1>
+
             <div className="seats">
-                {seats.map((element) => {
+                {seats.map((element, index) => {
                     return (
-                        <Seat id={element.id} isAvailable={element.isAvailable} num={element.name} setSelectedSeats={(id) => setSelectedSeats(id)} setSelectedSeatsNum={(num) => setSelectedSeatsNum(num)} />)
+                        <Seat key={index} id={element.id} isAvailable={element.isAvailable} num={element.name} setSelectedSeats={(id) => setSelectedSeats(id)} setSelectedSeatsNum={(num) => setSelectedSeatsNum(num)} />)
                 })}
             </div>
+
             <SeatInfos />
-            {selectedSeatsNum.map((element) => <PersonalData setName={setName} setCpf={setCpf} name={name} cpf={cpf} />)}
+
+            {selectedSeatsNum.map((element,index) => <PersonalData key={index} index={element} setName={setName} setCpf={setCpf} name={name} cpf={cpf} selectedSeatsNum={selectedSeatsNum}/>)}
+
             <div className="submitButton">
                 <Link to={`/sessoes/${idFilme}/assentos/${idSessao}/sucesso`}><input className="submit" type="submit" value="Reservar assento(s)" /></Link>
             </div>
 
+            
+
             <MovieOption movieInfo={movieInfo} date={date} schedule={schedule} />
+
         </section>
     )
 }

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
 import './sitting.css'
+
 let seatsIDs = [];
 let seatsNum = [];
+let buyers = []
+
 export default function Seat({ isAvailable, num, id, setSelectedSeats, setSelectedSeatsNum}) {
     let selection;
-    console.log(seatsIDs)
-    console.log(seatsNum)
-
+    
     const [selected, setSelected] = useState('')
 
     if (isAvailable) {
