@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import './sitting.css'
 let seatsIDs = [];
 let seatsNum = [];
-export default function Seat({ isAvailable, num, id, setSelectedSeats, selectedSeatsNum}) {
+export default function Seat({ isAvailable, num, id, setSelectedSeats, setSelectedSeatsNum}) {
     let selection;
 
     const [selected, setSelected] = useState('')
@@ -20,8 +20,7 @@ export default function Seat({ isAvailable, num, id, setSelectedSeats, selectedS
                 seatsIDs.push(id);
                 seatsNum.push(num);
                 setSelectedSeats([...seatsIDs]);
-                selectedSeatsNum([...seatsNum]);
-                console.log(seatsNum)
+                setSelectedSeatsNum([...seatsNum]);
             } else if (!isAvailable) {
                 alert("Esse assento não está disponível")
             } else {
@@ -29,8 +28,7 @@ export default function Seat({ isAvailable, num, id, setSelectedSeats, selectedS
                 seatsIDs = seatsIDs.filter(element => id !== element);
                 seatsNum = seatsNum.filter(element => num !== element);
                 setSelectedSeats([...seatsIDs]);
-                selectedSeatsNum([...seatsNum]);
-                console.log(seatsNum)
+                setSelectedSeatsNum([...seatsNum]);
             }
         }}>{num}</div>)
 }

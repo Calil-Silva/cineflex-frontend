@@ -17,7 +17,6 @@ export default function Success({ selectedSeats, name, cpf, date, schedule, movi
         })
         promise.then((response) => {
             setSuccess([...response.data])
-            console.log(success)
         })
     }, [])
 

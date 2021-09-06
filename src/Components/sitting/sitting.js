@@ -8,7 +8,7 @@ import PersonalData from './personalData';
 import MovieOption from '../HELPER/footer/movieOption';
 import { ChevronBackCircleOutline } from 'react-ionicons'
 
-export default function Sitting({ movieInfo, setSelectedSeats, setName, name, setCpf, cpf, date, schedule, selectedSeatsNum}) {
+export default function Sitting({ movieInfo, setSelectedSeats, setName, name, setCpf, cpf, date, schedule, setSelectedSeatsNum}) {
 
     const { idSessao, idFilme } = useParams();
     const [seats, setSeats] = useState([]);
@@ -39,7 +39,7 @@ export default function Sitting({ movieInfo, setSelectedSeats, setName, name, se
             <div className="seats">
                 {seats.map((element) => {
                     return (
-                        <Seat id={element.id} isAvailable={element.isAvailable} num={element.name} setSelectedSeats={(id) => setSelectedSeats(id)} selectedSeatsNum={(num) => selectedSeatsNum(num)}/>)})}
+                        <Seat id={element.id} isAvailable={element.isAvailable} num={element.name} setSelectedSeats={(id) => setSelectedSeats(id)} setSelectedSeatsNum={(num) => setSelectedSeatsNum(num)}/>)})}
             </div>
             <SeatInfos />
             <PersonalData setName={setName} setCpf={setCpf} name={name} cpf={cpf}/>
